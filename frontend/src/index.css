@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary Colors - Replaced with Grayscale/Monochrome theme */
+  --color-primary-50: #f9fafb;
+  --color-primary-100: #f3f4f6;
+  --color-primary-200: #e5e7eb;
+  --color-primary-300: #d1d5db;
+  --color-primary-400: #9ca3af;
+  --color-primary-500: #6b7280;
+  --color-primary-600: #4b5563;
+  --color-primary-700: #374151;
+  --color-primary-800: #1f2937;
+  --color-primary-900: #111827;
+
+  /* Dark Mode Colors */
+  --color-dark-bg: #0f0f0f;
+  --color-dark-card: #1a1a1a;
+  --color-dark-border: #2a2a2a;
+  --color-dark-hover: #252525;
+
+  /* Custom Fonts */
+  --font-anton: 'Anton', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-dark-bg dark:text-gray-100 transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-white hover:bg-gray-500 text-black border border-gray-200 font-medium py-2 px-4 rounded-lg transition-colors focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 dark:bg-dark-card dark:border-dark-border dark:text-white dark:hover:bg-dark-hover;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-dark-card border border-gray-200 dark:border-dark-border rounded-xl shadow-sm p-6;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 dark:border-dark-border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent bg-white dark:bg-dark-hover text-gray-900 dark:text-white transition-colors;
+  }
+}
