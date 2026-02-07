@@ -1,7 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
-import { Menu, X, LogOut, User, Coins } from 'lucide-react';
-import { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import { Menu, X, LogOut, User, Coins } from "lucide-react";
+import { useState } from "react";
 
 const Navbar = () => {
   const { user, logout, isAuthenticated } = useAuth();
@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    navigate('/login');
+    navigate("/login");
     setIsMenuOpen(false);
   };
 
@@ -34,6 +34,12 @@ const Navbar = () => {
                 className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent font-medium text-gray-500 dark:hover:text-black dark:text-gray-400 transition duration-250 hover:bg-white rounded-md"
               >
                 Venting Wall
+              </Link>
+              <Link
+                to="/about"
+                className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent font-medium text-gray-500 dark:hover:text-black dark:text-gray-400 transition duration-250 hover:bg-white rounded-md"
+              >
+                About
               </Link>
             </div>
           </div>
@@ -112,7 +118,7 @@ const Navbar = () => {
           <div className="pt-2 pb-3 space-y-1">
             <Link
               to="/"
-              className="block pl-4 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-white rounded-md" 
+              className="block pl-4 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-white rounded-md"
             >
               Home
             </Link>
@@ -121,6 +127,12 @@ const Navbar = () => {
               className="block pl-4 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-white rounded-md"
             >
               Venting Wall
+            </Link>
+            <Link
+              to="/about"
+              className="block pl-4 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-white rounded-md"
+            >
+              About
             </Link>
           </div>
           <div className="pt-4 pb-4 border-t border-gray-200 dark:border-dark-border">

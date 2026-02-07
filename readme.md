@@ -19,6 +19,7 @@
 ## 🛠️ Technology Stack
 
 ### Frontend
+
 - **Framework**: [React 19](https://react.dev/)
 - **Build Tool**: [Vite](https://vitejs.dev/)
 - **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
@@ -28,6 +29,7 @@
 - **HTTP Client**: [Axios](https://axios-http.com/)
 
 ### Backend
+
 - **Runtime**: [Node.js](https://nodejs.org/)
 - **Framework**: [Express.js 5](https://expressjs.com/)
 - **Database**: [MongoDB](https://www.mongodb.com/) (with Mongoose 9)
@@ -38,6 +40,7 @@
 ## 📋 Prerequisites
 
 Before you begin, ensure you have the following installed:
+
 - **Node.js**: v18.0.0 or higher
 - **npm** (Node Package Manager)
 - **MongoDB**: A local instance or a cloud database (MongoDB Atlas)
@@ -47,12 +50,14 @@ Before you begin, ensure you have the following installed:
 Cloning the repository and setting up the project takes just a few minutes.
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/aravindanirudh/exhale-emotional-venting-website.git
 cd exhale-website
 ```
 
 ### 2. Backend Setup
+
 Navigate to the backend directory, install dependencies, and configure environment variables.
 
 ```bash
@@ -61,6 +66,7 @@ npm install
 ```
 
 Create a `.env` file in the `backend` directory with the following variables:
+
 ```env
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/exhale_db  # Or your MongoDB Atlas URI
@@ -70,12 +76,14 @@ NODE_ENV=development
 ```
 
 Start the backend server:
+
 ```bash
 npm run dev
 # Server will start on http://localhost:5000
 ```
 
 ### 3. Frontend Setup
+
 Open a new terminal, navigate to the frontend directory, and install dependencies.
 
 ```bash
@@ -84,11 +92,13 @@ npm install
 ```
 
 Create a `.env` file in the `frontend` directory (optional if using defaults, but recommended):
+
 ```env
 VITE_API_BASE_URL=http://localhost:5000/api
 ```
 
 Start the frontend development server:
+
 ```bash
 npm run dev
 # Application will run on http://localhost:5173
@@ -122,21 +132,21 @@ exhale-website/
 
 ## 🔌 API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| **Auth** | | |
-| POST | `/api/auth/register` | Register a new anonymous user |
-| POST | `/api/auth/login` | Login user |
-| GET | `/api/auth/me` | Get current user's profile |
-| **Posts** | | |
-| GET | `/api/posts` | Get all posts (paginated) |
-| POST | `/api/posts` | Create a new post |
-| GET | `/api/posts/:id` | Get a specific post |
-| DELETE | `/api/posts/:id` | Delete own post |
-| POST | `/api/posts/:id/react`| React to a post |
-| **Comments** | | |
-| GET | `/api/comments/post/:id`| Get comments for a post |
-| POST | `/api/comments` | Add a comment |
+| Method       | Endpoint                 | Description                   |
+| ------------ | ------------------------ | ----------------------------- |
+| **Auth**     |                          |                               |
+| POST         | `/api/auth/register`     | Register a new anonymous user |
+| POST         | `/api/auth/login`        | Login user                    |
+| GET          | `/api/auth/me`           | Get current user's profile    |
+| **Posts**    |                          |                               |
+| GET          | `/api/posts`             | Get all posts (paginated)     |
+| POST         | `/api/posts`             | Create a new post             |
+| GET          | `/api/posts/:id`         | Get a specific post           |
+| DELETE       | `/api/posts/:id`         | Delete own post               |
+| POST         | `/api/posts/:id/react`   | React to a post               |
+| **Comments** |                          |                               |
+| GET          | `/api/comments/post/:id` | Get comments for a post       |
+| POST         | `/api/comments`          | Add a comment                 |
 
 ## 🤝 Contributing
 
@@ -149,11 +159,11 @@ Contributions are welcome! If you'd like to improve Exhale, please follow these 
 5. Open a Pull Request
 
 ## 🗒️ To-do (aka future plans)
+
 These are just some ideas and may or may not be implemented :P
 
 - Improve hero section (landing page or homepage)
-- Add contact section
-- Loading be patient section (in posts)
 
 ## 📧 Contact
+
 - Project Author: [Aravind A Kamath](https://github.com/aravindanirudh)

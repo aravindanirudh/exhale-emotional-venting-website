@@ -4,6 +4,7 @@ import RegisterPage from "./pages/RegisterPage";
 import VentingWallPage from "./pages/VentingWallPage";
 import Navbar from "./components/common/Navbar";
 import CreatePostPage from "./pages/CreatePostPage";
+import About from "./pages/About";
 
 import PostDetailPage from "./pages/PostDetailPage";
 
@@ -38,12 +39,13 @@ function App() {
         <Routes>
           {/* Full width HomePage */}
           <Route path="/" element={<HomePage />} />
-          
+
           {/* Container wrapped pages */}
           <Route element={<MainLayout />}>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/wall" element={<VentingWallPage />} />
+            <Route path="/about" element={<About />} />
             <Route
               path="/create-post"
               element={
