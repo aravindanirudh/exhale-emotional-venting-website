@@ -16,21 +16,25 @@ const About = () => {
             className="max-w-full h-auto rounded-2xl lg:h-125 lg:w-125"
           />
           <div className="flex flex-col text-justify justify-center max-w-2xl">
-            <p className="lg:text-lg">
-              Inspired by Reddit, but repelled by its negativity and doomer
-              mindset, Exhale is a safe space to vent your thoughts, emotions,
-              and experiences anonymously. Freely post your experiences, get the
-              burden off your chest. You can comment on other posts and support
-              each other. Give advice or even just some kind words.
+            <p className="lg:text-lg mb-4">
+              Inspired by Reddit, but repelled by its negativity, noise and
+              doomer mindset, Exhale is a safe space to vent your thoughts,
+              emotions, and experiences anonymously. You can comment advice or
+              even some kind words on other posts and support each other. Exhale
+              exists because people were never meant to carry everything by
+              themselves.
               <br />
               <br />
-              'The Contract' is an imaginary arc which inspired the developer,
-              Aravind A Kamath to kill his paralysis by analysis and work on
-              personal development/skills and finally build something and do the
-              things he wanted to do since a very long time. This is the reason
-              why Exhale exists!
+              'The Contract' is an imaginary arc that changed everything for its
+              creator, Aravind A Kamath. For years, ideas were trapped behind
+              overthinking - perfection delaying progress, paralysis by analysis. Until one moment forced a decision: stop waiting, stop
+              hesitating, and start building. Exhale
+              is the result of that arc - proof that the hardest step is
+              simply beginning.
               <br />
               <br />
+              Sometimes all it takes is one decision to change your life. So
+              take a breath. And when you're ready - Exhale!
             </p>
             <Link
               to="https://github.com/aravindanirudh"
