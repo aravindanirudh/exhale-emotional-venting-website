@@ -75,7 +75,7 @@ const PostList = ({ moodFilter }) => {
     return (
       <>
       <h1 className='text-center font-semibold pt-10'>Loading posts...please be patient!</h1>
-      <p className='text-center text-sm text-gray-400'>This may take upto 30-60 seconds if the backend server is sleeping!</p>
+      <p className='text-center text-sm text-gray-400'>This may take up to 30-60 seconds if the backend server is sleeping!</p>
       <div className="flex justify-center items-center py-10">
         <Loader2 className="w-8 h-8 animate-spin text-primary-600" />
       </div>
