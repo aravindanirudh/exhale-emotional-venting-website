@@ -152,6 +152,8 @@ Contributions are welcome! If you'd like to improve Exhale, please follow these 
 These are just some ideas and may or may not be implemented :P
 
 - Improve hero section (landing page or homepage)
+- Add contact section
+- Loading be patient section (in posts)
 
 ## 📧 Contact
 - Project Author: [Aravind A Kamath](https://github.com/aravindanirudh)
