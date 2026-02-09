@@ -6,6 +6,8 @@
 
 > "A problem shared is a problem halved."
 
+- Note: Documentation/code explanations are provided as comments. For uniformity and to follow standard procedures, comments exist even for the most basic lines of code (such as imports). Tense/grammar might be messed up in the documentation but, please ignore it!
+
 ## 🚀 Features
 
 - **Anonymous Venting**: Share your thoughts and feelings without revealing your identity.
@@ -111,7 +113,7 @@ exhale-website/
 ├── backend/                 # Node.js/Express backend
 │   ├── config/              # Database connection file
 │   ├── controllers/         # Request logic - each controller processes incoming data, interacts with models, and sends responses back to the client
-│   ├── middleware/          # Functions that execute between receiving a request and sending a response. Includes authentication checks (verifying JWT tokens), error handling, eate limiting to prevent abuse
+│   ├── middleware/          # Functions that execute between receiving a request and sending a response. Includes authentication checks (verifying JWT tokens), error handling, rate limiting to prevent abuse
 │   ├── models/              # Mongoose schemas (User, Post, Comment) that define what fields each document can have and their validation rules
 │   ├── routes/              # API Routes - Maps HTTP endpoints to controller functions. Defines API structure (like /api/users, /api/posts) and connects URLs to the appropriate controller logic
 │   ├── utils/               # Helper functions such as token generation, password hashing helpers, or email validation functions
@@ -120,11 +122,14 @@ exhale-website/
 ├── frontend/                # React frontend
 │   ├── src/
 │   │   ├── components/      # Reusable UI components
-│   │   ├── context/         # Auth & Theme context
-│   │   ├── pages/           # Application pages (Home, Login, Wall...)
-│   │   ├── services/        # API calls (Axios setup)
+│   │   │   ├── comments/    # CommentCard, CommentSection components
+│   │   │   ├── common/      # Navbar, ProtectedRoute components
+│   │   │   ├── posts/       # MoodSelector, PostCard, PostList components
+│   │   ├── context/         # React Context providers for global state management. Auth context manages user login state
+│   │   ├── pages/           # Full page components representing different routes in website (Home, Login, Venting Wall...)
+│   │   ├── services/        # API integration layer where Axios is set up and contains functions to make HTTP requests to the backend endpoints
 │   │   ├── App.jsx          # Main App component
-│   │   └── main.jsx         # Entry point
+│   │   └── main.jsx         # Entry point that renders React app into the DOM and includes any global setup
 │   └── index.html
 │
 └── Exhale_PRD.md            # Product Requirements Document
@@ -157,12 +162,6 @@ Contributions are welcome! If you'd like to improve Exhale, please follow these 
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## 🗒️ To-do (aka future plans)
-
-These are just some ideas and may or may not be implemented :P
-
-- Improve hero section (landing page or homepage)
 
 ## 📧 Contact
 

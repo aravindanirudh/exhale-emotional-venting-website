@@ -1,5 +1,4 @@
 import React from "react";
-import founderImage from "../assets/aravind_a_kamath.avif";
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -10,11 +9,6 @@ const About = () => {
           About Exhale
         </h1>
         <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 justify-center items-center">
-          <img
-            src={founderImage}
-            alt="Image of the founder/developer of Exhale, Aravind A Kamath in an picture inspired by Dr. Dre's 'The Contract' in Grand Theft Auto V Online"
-            className="max-w-full h-auto rounded-2xl lg:h-125 lg:w-125"
-          />
           <div className="flex flex-col text-justify justify-center max-w-2xl">
             <p className="lg:text-lg mb-4">
               Inspired by Reddit, but repelled by its negativity, noise and
@@ -36,6 +30,7 @@ const About = () => {
               Sometimes all it takes is one decision to change your life. So
               take a breath. And when you're ready - Exhale!
             </p>
+            {/* Link (button) to go to GitHub page of developer, Aravind A Kamath */}
             <Link
               to="https://github.com/aravindanirudh"
               target="_blank"
