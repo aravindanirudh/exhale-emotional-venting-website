@@ -108,7 +108,7 @@ npm run dev
 
 ## 📂 Project Structure
 
-```
+```text
 exhale-website/
 ├── backend/                 # Node.js/Express backend
 │   ├── config/              # Database connection file
