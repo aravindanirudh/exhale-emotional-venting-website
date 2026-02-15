@@ -60,6 +60,13 @@ const createPost = async (req, res) => {
   try {
     const { title, content, mood, autoDelete } = req.body;
 
+    // Get IP: Render/Vercel puts real IP in x-forwarded-for.
+    // It might be a list "client, proxy1, proxy2" -> we want the first one.
+    const forwardedFor = req.headers["x-forwarded-for"];
+    const clientIp = forwardedFor
+      ? forwardedFor.split(",")[0].trim()
+      : req.ip || req.connection.remoteAddress;
+
     let deleteAt = null;
     if (autoDelete && autoDelete.enabled && autoDelete.hours) {
       deleteAt = new Date();
@@ -75,7 +82,7 @@ const createPost = async (req, res) => {
         enabled: autoDelete?.enabled || false,
         deleteAt,
       },
-      ipAddress: req.ip || req.connection.remoteAddress,
+      ipAddress: clientIp,
     });
 
     // Reward user with tokens (5 for post)
