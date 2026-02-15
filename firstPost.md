@@ -1,4 +1,4 @@
-- Posted by: Aravind A Kamath 🛡️ Owner
+- Posted by: Aravind 🛡️ Owner
 - Role: Admin
 - Post title: `First vent post - keeping it positive!`
 - Post contents:

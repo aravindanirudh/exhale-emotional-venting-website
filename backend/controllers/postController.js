@@ -109,6 +109,9 @@ const deletePost = async (req, res) => {
           .json({ success: false, message: "Not authorized" });
       }
 
+      // Delete all comments associated with this post
+      await require("../models/Comment").deleteMany({ post: post._id });
+
       await post.deleteOne(); // Use deleteOne() for Mongoose 7+
       res.json({ success: true, message: "Post removed" });
     } else {

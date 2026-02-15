@@ -24,17 +24,17 @@ const PostCard = ({ post, onReact, onDelete }) => {
   return (
     <div className="card hover:shadow-md transition-shadow duration-200">
       <div className="flex justify-between items-start mb-4">
-        <div className="flex items-center space-x-3">
-          <div className={`p-2 rounded-full ${mood.bg}`}>
+        <div className="flex items-center space-x-3 min-w-0 flex-1">
+          <div className={`p-2 rounded-full ${mood.bg} shrink-0`}>
             <MoodIcon className={`w-5 h-5 ${mood.color}`} />
           </div>
-          <div>
+          <div className="min-w-0 flex-1">
             <div className="flex items-center space-x-2">
-              <span className="font-medium text-gray-900 dark:text-gray-100">
+              <span className="font-medium text-gray-900 dark:text-gray-100 truncate">
                 {post.author.anonymousName || "Anonymous"}
               </span>
               <span
-                className={`text-xs px-2 py-0.5 rounded-full ${mood.bg} ${mood.color}`}
+                className={`text-xs px-2 py-0.5 rounded-full ${mood.bg} ${mood.color} shrink-0`}
               >
                 {mood.label}
               </span>
@@ -51,7 +51,7 @@ const PostCard = ({ post, onReact, onDelete }) => {
         {(isOwner || isAdmin) && (
           <button
             onClick={() => onDelete(post._id)}
-            className="text-gray-400 hover:text-red-500 transition-colors p-1"
+            className="text-gray-400 hover:text-red-500 transition-colors p-1 shrink-0 ml-2"
             title="Delete post"
           >
             <Trash2 className="w-4 h-4" />
