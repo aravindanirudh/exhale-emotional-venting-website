@@ -1,17 +1,18 @@
-import { useState } from 'react';
-import { useAuth } from '../../context/AuthContext';
-import { formatDistanceToNow } from 'date-fns';
-import { Trash2, MessageCircle, CornerDownRight, Loader2 } from 'lucide-react';
-import { toast } from 'sonner';
+import { useState } from "react";
+import { useAuth } from "../../context/AuthContext";
+import { formatDistanceToNow } from "date-fns";
+import { Trash2, MessageCircle, CornerDownRight, Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 const CommentCard = ({ comment, onDelete, onReply, depth = 0 }) => {
   const { user } = useAuth();
   const [isReplying, setIsReplying] = useState(false);
-  const [replyContent, setReplyContent] = useState('');
+  const [replyContent, setReplyContent] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const isOwner = user && (user.id === comment.author._id || user.id === comment.author);
-  const isAdmin = user && user.role === 'admin';
+  const isOwner =
+    user && (user.id === comment.author._id || user.id === comment.author);
+  const isAdmin = user && user.role === "admin";
 
   const handleSubmitReply = async (e) => {
     e.preventDefault();
@@ -21,32 +22,36 @@ const CommentCard = ({ comment, onDelete, onReply, depth = 0 }) => {
     try {
       await onReply(comment._id, replyContent);
       setIsReplying(false);
-      setReplyContent('');
-      toast.success('Reply added');
+      setReplyContent("");
+      toast.success("Reply added");
     } catch (error) {
-      toast.error('Failed to add reply');
+      toast.error("Failed to add reply");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className={`
-      ${depth > 0 ? 'ml-8 mt-2 border-l-2 border-gray-100 dark:border-dark-border pl-4' : 'mt-4'}
-    `}>
-      <div className="bg-gray-50 dark:bg-dark-hover p-4 rounded-lg">
+    <div
+      className={`
+      ${depth > 0 ? "ml-8 mt-2 border-l-2 border-gray-100 dark:border-dark-border pl-4" : "mt-4"}
+    `}
+    >
+      <div className="bg-white dark:bg-dark-hover p-4 rounded-lg hover:shadow-md transition-shadow duration-200 border border-gray-200 dark:border-dark-border shadow-sm">
         <div className="flex justify-between items-start mb-2">
           <div className="flex items-center space-x-2">
             <span className="font-medium text-sm text-gray-900 dark:text-gray-100">
               {comment.author.anonymousName}
             </span>
             <span className="text-xs text-gray-500">
-              {formatDistanceToNow(new Date(comment.createdAt), { addSuffix: true })}
+              {formatDistanceToNow(new Date(comment.createdAt), {
+                addSuffix: true,
+              })}
             </span>
           </div>
-          
+
           {(isOwner || isAdmin) && (
-            <button 
+            <button
               onClick={() => onDelete(comment._id)}
               className="text-gray-400 hover:text-red-500 transition-colors p-1"
             >
@@ -61,9 +66,9 @@ const CommentCard = ({ comment, onDelete, onReply, depth = 0 }) => {
 
         <div className="mt-3 flex items-center space-x-4">
           {depth < 1 && (
-            <button 
+            <button
               onClick={() => setIsReplying(!isReplying)}
-              className="flex items-center space-x-1 text-xs text-white hover:text-primary-400 transition-colors duration-150"
+              className="flex items-center space-x-1 text-xs text-gray-900 dark:text-gray-100 hover:text-primary-400 transition-colors duration-150"
             >
               <MessageCircle className="w-3 h-3" />
               <span>Reply</span>
@@ -84,9 +89,9 @@ const CommentCard = ({ comment, onDelete, onReply, depth = 0 }) => {
             <button
               type="submit"
               disabled={loading || !replyContent.trim()}
-              className="bg-gray-800 text-white px-3 py-1.5 rounded-md text-sm font-medium"
+              className="bg-black text-white px-3 py-1.5 rounded-md text-sm font-medium"
             >
-              {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Send'}
+              {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : "Send"}
             </button>
           </form>
         )}
@@ -97,15 +102,16 @@ const CommentCard = ({ comment, onDelete, onReply, depth = 0 }) => {
           For simplicity, let's assume the parent handles rendering or we pass children as props.
           Actually, standard way is recursive or flattened. Let's assume parent orchestrates.
       */}
-      {comment.replies && comment.replies.map(reply => (
-        <CommentCard 
-          key={reply._id} 
-          comment={reply} 
-          onDelete={onDelete} 
-          onReply={onReply}
-          depth={depth + 1} 
-        />
-      ))}
+      {comment.replies &&
+        comment.replies.map((reply) => (
+          <CommentCard
+            key={reply._id}
+            comment={reply}
+            onDelete={onDelete}
+            onReply={onReply}
+            depth={depth + 1}
+          />
+        ))}
     </div>
   );
 };

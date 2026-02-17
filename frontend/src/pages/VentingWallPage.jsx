@@ -1,15 +1,15 @@
-import { useState } from 'react';
-import PostList from '../components/posts/PostList';
-import MoodSelector from '../components/posts/MoodSelector';
-import { useNavigate } from 'react-router-dom';
-import { Plus } from 'lucide-react';
+import { useState } from "react";
+import PostList from "../components/posts/PostList";
+import MoodSelector from "../components/posts/MoodSelector";
+import { useNavigate } from "react-router-dom";
+import { Plus } from "lucide-react";
 
 const VentingWallPage = () => {
   const navigate = useNavigate();
-  const [selectedMood, setSelectedMood] = useState('');
+  const [selectedMood, setSelectedMood] = useState("");
 
   const handleMoodSelect = (moodId) => {
-    setSelectedMood(prev => prev === moodId ? '' : moodId);
+    setSelectedMood((prev) => (prev === moodId ? "" : moodId));
   };
 
   return (
@@ -24,7 +24,7 @@ const VentingWallPage = () => {
         </p>
 
         <div className="flex flex-col items-center">
-          <span className="text-sm font-medium text-white mb-3">
+          <span className="text-sm font-medium text-gray-700 dark:text-white mb-3">
             Filter by Mood
           </span>
           <MoodSelector
@@ -37,7 +37,7 @@ const VentingWallPage = () => {
       <PostList moodFilter={selectedMood} />
 
       <button
-        onClick={() => navigate('/create-post')}
+        onClick={() => navigate("/create-post")}
         className="fixed bottom-8 right-8 p-4 bg-white hover:bg-gray-500 text-black border border-gray-200 rounded-full shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 z-40"
         aria-label="Create post"
       >

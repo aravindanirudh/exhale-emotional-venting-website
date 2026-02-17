@@ -84,7 +84,7 @@ const PostCard = ({ post, onReact, onDelete }) => {
           {/* Reaction buttons */}
           <button
             onClick={() => onReact(post._id, "❤️")}
-            className="flex items-center space-x-2 px-3 py-1.5 rounded-md bg-white hover:bg-gray-500 hover:text-white border border-transparent hover:border-transparent text-black dark:text-black transition-colors group"
+            className="flex items-center space-x-2 px-3 py-1.5 rounded-md bg-white hover:bg-black hover:text-white border border-transparent hover:border-transparent text-black dark:text-black transition-colors group"
           >
             <Heart className="w-4 h-4 text-black group-hover:text-white dark:text-black" />
             <span className="text-sm font-medium text-black group-hover:text-white dark:text-black">
@@ -95,7 +95,7 @@ const PostCard = ({ post, onReact, onDelete }) => {
 
         <Link
           to={`/posts/${post._id}`}
-          className="flex items-center space-x-2 px-3 py-1.5 rounded-md bg-white hover:bg-gray-500 hover:text-white border border-transparent hover:border-transparent text-black dark:text-black transition-colors group"
+          className="flex items-center space-x-2 px-3 py-1.5 rounded-md bg-white hover:bg-black hover:text-white border border-transparent hover:border-transparent text-black dark:text-black transition-colors group"
         >
           <MessageSquare className="w-4 h-4 text-black group-hover:text-white dark:text-black" />
           <span className="text-sm font-medium text-black group-hover:text-white dark:text-black">
